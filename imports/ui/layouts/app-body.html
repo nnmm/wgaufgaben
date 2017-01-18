@@ -1,12 +1,11 @@
 <template name="App_body">
   <div class="container">
     <header>
-      <h1>WG-Aufgaben</h1>
+      <a href="/"><h1>WG-Aufgaben</h1></a>
       <ul id="names">
         {{#each roomie in roomies}}
-          <li>
-            <a href="/roomie/{{roomie.name}}" title="{{roomie.name}}"
-              class="roomie-todo {{activeRoomieClass roomie}}">
+          <li class="{{activeRoomieClass roomie}}">
+            <a href="/roomie/{{roomie.name}}" title="{{roomie.name}}">
               {{roomie.name}}
             </a>
           </li>

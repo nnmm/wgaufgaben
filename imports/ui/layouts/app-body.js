@@ -6,7 +6,6 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { Template } from 'meteor/templating';
 import { ActiveRoute } from 'meteor/zimme:active-route';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { _ } from 'meteor/underscore';
 import { $ } from 'meteor/jquery';
 
 import { Checkmarks } from '../../api/checkmarks.js';
@@ -23,8 +22,8 @@ Template.App_body.helpers({
   ],
   activeRoomieClass(roomie) {
     const active = ActiveRoute.name('Roomie.show')
-      && FlowRouter.getParam('_id') === roomie._id;
-
+      && FlowRouter.getParam('_id') === roomie.name;
+    console.log(active);
     return active && 'active';
   },
 });
