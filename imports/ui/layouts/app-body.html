@@ -1,0 +1,23 @@
+<template name="App_body">
+  <div class="container">
+    <header>
+      <h1>WG-Aufgaben</h1>
+      <ul id="names">
+        {{#each roomie in roomies}}
+          <li>
+            <a href="/roomie/{{roomie.name}}" title="{{roomie.name}}"
+              class="roomie-todo {{activeRoomieClass roomie}}">
+              {{roomie.name}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </header>
+
+    <div class="content-overlay"></div>
+
+    <div id="content-container">
+      {{> Template.dynamic template=main}}
+    </div>
+  </div>
+</template>
