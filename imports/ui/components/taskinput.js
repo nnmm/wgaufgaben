@@ -1,7 +1,8 @@
 import { Template } from 'meteor/templating';
  
 import { Checkmarks } from '../../api/checkmarks.js';
- 
+import { task_list } from '../../definitions/tasks.js';
+
 import './taskinput.html';
 
 Template.taskinput.onCreated(function() {
@@ -23,6 +24,7 @@ Template.taskinput.events({
       checker: instance.getRoomieId(),
       task: this.name,
       createdAt: new Date(),
+      weight: this.weight,
     });
   },
 });

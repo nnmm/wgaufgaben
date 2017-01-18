@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
  
 import { Checkmarks } from '../../api/checkmarks.js';
+import { task_list } from '../../definitions/tasks.js';
 
 import './roomie-show-page.html';
 import '../components/taskinput.js';
@@ -13,12 +14,5 @@ Template.Roomie_show_page.helpers({
   tasks() {
     return Checkmarks.find({}, { sort: { createdAt: -1 } });
   },
-  taskinputs: [
-    { name: "Biomüll", weight: 1 },
-    { name: "Restmüll", weight: 2 },
-    { name: "WG-Wäsche", weight: 4 },
-    { name: "Handtücher", weight: 1 },
-    { name: "Spülmaschine", weight: 1 },
-    { name: "Einkaufen", weight: 2 }
-  ],
+  taskinputs: task_list,
 });

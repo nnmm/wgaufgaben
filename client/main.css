@@ -97,38 +97,15 @@ textarea {
 
 body {
     overflow-y: scroll;
+    background-image: url('/img/ricepaper_v3.png');
 }
 
 .container {
   max-width: 1024px;
   margin: 0 auto;
   min-height: 100%;
-  background: #bbc;
-}
-
-header {
+  background-color: white;
   padding: 20px;
-}
-
-#names {
-  text-align: justify;
-  min-width: 400px;
-  font-size:0
-}
-
-#names:after {
-  content: '';
-  display: inline-block;
-  width: 100%;
-}
-
-#names li {
-    display: inline-block;
-    font-size: 18px;
-}
-
-#names .active {
-    background-color: white;
 }
 
 a {
@@ -137,9 +114,53 @@ a {
 }
 
 
+#names {
+    display: table;
+    height: 67px;
+    width: 100%;
+    padding: 0;
+    font-size: 20px;
+}
 
+#names li {
+    display: table-cell;
+    height: 67px;
+    width: 25%;  /* (100 / numItems)% */
+    line-height: 67px;
+    text-align: center;
+    background: #ddd;
+    border-right: 1px solid #fff;
+    white-space: nowrap;
+}
 
+#names .active {
+  background: #eee;
+}
 
+#names a {
+  color: #322;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 15px;
+}
+
+table tr:nth-child(odd) td {
+  background-color: #eee;
+}
+
+table tr:nth-child(even) td {
+  background-color: #ddd;
+}
 
 
 

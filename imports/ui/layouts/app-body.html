@@ -4,7 +4,7 @@
       <a href="/"><h1>WG-Aufgaben</h1></a>
       <ul id="names">
         {{#each roomie in roomies}}
-          <li class="{{activeRoomieClass roomie}}">
+          <li class="roomieName {{activeRoomieClass roomie}}">
             <a href="/roomie/{{roomie.name}}" title="{{roomie.name}}">
               {{roomie.name}} ({{total roomie.name}})
             </a>

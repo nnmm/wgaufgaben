@@ -1,0 +1,15 @@
+export const task_list = [
+  { name: "Biomüll", weight: 1 },
+  { name: "Restmüll", weight: 2 },
+  { name: "WG-Wäsche waschen", weight: 4 },
+  { name: "Handtücher wechseln", weight: 1 },
+  { name: "Spülmaschine ausräumen", weight: 1 },
+  { name: "Einkaufen", weight: 2 },
+  { name: "Flur saugen", weight: 2 },
+  { name: "Briefe nachtragen", weight: 3 },
+  { name: "Flurtisch aufräumen", weight: 1 },
+  { name: "Pfandflaschen zurückgeben", weight: 4 },
+  { name: "Wasserkocher entkalken", weight: 2 },
+  { name: "Duschabfluss reinigen", weight: 3 },
+  { name: "Persönlicher Putzdienst", weight: 0 },
+];

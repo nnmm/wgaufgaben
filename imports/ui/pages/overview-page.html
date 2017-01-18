@@ -1,3 +1,7 @@
 <template name="Overview_page">
-  overview-page
+  <ul>
+    {{#each tasks}}
+     <li>{{checker}}: {{task}} at {{createdAt}}</li>
+    {{/each}}
+  </ul>
 </template>
