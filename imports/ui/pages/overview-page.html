@@ -1,7 +1,13 @@
 <template name="Overview_page">
-  <ul>
-    {{#each tasks}}
-     <li>{{checker}}: {{task}} at {{createdAt}}</li>
-    {{/each}}
-  </ul>
+  <div id="mbdm" class="clearfix">
+    <img src="/img/profile.jpg" />
+    <h2>Mitbewohner des Monats: <span class="winner">Niko</span></h2>
+  </div>
+  <div id="eventlist">
+    <ul>
+      {{#each tasks}}
+       <li>{{checker}}: {{task}} at {{createdAt}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>

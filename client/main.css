@@ -146,6 +146,10 @@ button {
   background-color: transparent;
 }
 
+button:focus {
+  outline: 0;
+}
+
 table {
   width: 100%;
 }
@@ -162,7 +166,35 @@ table tr:nth-child(even) td {
   background-color: #ddd;
 }
 
+#mbdm {
+  padding: 30px;
+  background-color: #dcc;
+}
 
+#mbdm h2 {
+  float: left;
+  margin-left: 20px;
+}
+
+#mbdm img {
+  float: left;
+  width: 30%;
+  border-radius: 50%;
+}
+
+.winner {
+  font-size: 45px;
+  color: gray;
+  display: block;
+}
+
+col:nth-of-type(1) {
+  width: 35%;
+}
+
+col:nth-of-type(2) {
+  width: 65%;
+}
 
 
 
