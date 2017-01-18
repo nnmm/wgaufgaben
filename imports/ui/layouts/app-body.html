@@ -6,7 +6,7 @@
         {{#each roomie in roomies}}
           <li class="{{activeRoomieClass roomie}}">
             <a href="/roomie/{{roomie.name}}" title="{{roomie.name}}">
-              {{roomie.name}}
+              {{roomie.name}} ({{total roomie.name}})
             </a>
           </li>
         {{/each}}

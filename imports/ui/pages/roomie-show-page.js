@@ -13,11 +13,6 @@ Template.Roomie_show_page.helpers({
   tasks() {
     return Checkmarks.find({}, { sort: { createdAt: -1 } });
   },
-  total() {
-    const roomieId = Template.instance().getRoomieId();
-  	const taskCount = Checkmarks.find({checker: roomieId, task: this.name}).count();
-  	return "0 (Dummy)";
-  },
   taskinputs: [
     { name: "Biomüll", weight: 1 },
     { name: "Restmüll", weight: 2 },

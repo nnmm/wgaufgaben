@@ -23,8 +23,15 @@ Template.App_body.helpers({
   activeRoomieClass(roomie) {
     const active = ActiveRoute.name('Roomie.show')
       && FlowRouter.getParam('_id') === roomie.name;
-    console.log(active);
     return active && 'active';
+  },
+  total(roomie) {
+    const taskCount = Checkmarks.find({checker: roomie});
+    let total = 0;
+    taskCount.forEach(function(check) {
+      total += check.weight || 1;
+    });
+    return total;
   },
 });
 
