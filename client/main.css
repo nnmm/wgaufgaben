@@ -10,7 +10,21 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+@font-face {
+    font-family: 'dejavu_sansextralight';
+    src: url('fonts/DejaVuSans-ExtraLight-webfont.eot');
+    src: url('fonts/DejaVuSans-ExtraLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/DejaVuSans-ExtraLight-webfont.woff') format('woff'),
+         url('fonts/DejaVuSans-ExtraLight-webfont.ttf') format('truetype'),
+         url('fonts/DejaVuSans-ExtraLight-webfont.svg#dejavu_sansextralight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 html {
+    font-family: 'dejavu_sansextralight', sans-serif;
     color: #222;
     font-size: 1em;
     line-height: 1.4;
