@@ -22,6 +22,17 @@
 
 }
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+       url('fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+       url('fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+       url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+       url('fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
     font-family: 'dejavu_sansextralight', sans-serif;
@@ -111,54 +122,89 @@ textarea {
 
 body {
     overflow-y: scroll;
-    background-image: url('/img/ricepaper_v3.png');
+    background-color: #222;
+    /* background-image: url('/img/ricepaper_v3.png'); */
 }
 
 .container {
   max-width: 1024px;
   margin: 0 auto;
   min-height: 100%;
-  background-color: white;
+  background-color: #333;
   padding: 20px;
+  color: white;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 
-#names {
-    display: table;
-    height: 67px;
-    width: 100%;
-    padding: 0;
-    font-size: 20px;
+/* ==== header ==== */
+
+header {
+  display: flex;
+  margin-bottom: 30px;
 }
 
-#names li {
-    display: table-cell;
-    height: 67px;
-    width: 25%;  /* (100 / numItems)% */
-    line-height: 67px;
-    text-align: center;
-    background: #ddd;
-    border-right: 1px solid #fff;
-    white-space: nowrap;
+#mbdm {
+  /*padding: 30px;*/
+  flex: 1 auto;
 }
 
-#names .active {
-  background: #bfb;
+#mbdm img {
+  width: 50px;
+  border-radius: 50%;
 }
 
-#names a {
-  color: #322;
+#roomies {
+  display: flex;
+  flex: 1 auto;
+  font-size: 20px;
+}
+
+.roomie {
+  flex: 1 auto;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* make whole block clickable */
+.roomie a {
   display: block;
 }
 
+.active {
+  background-color: #555;
+}
+
+.Felix {
+  border-bottom: solid red 2px;
+}
+
+
+.Veronika {
+  border-bottom: solid #c49 2px;
+}
+
+.Niko {
+  border-bottom: solid yellow 2px;
+}
+
+.Stefan {
+  border-bottom: solid #7bf 2px;
+}
+
+
+
+
+
+
 button {
   border: none;
-  background-color: transparent;
+  background-color: #304;
+  display: block;
 }
 
 button:focus {
@@ -174,27 +220,11 @@ td {
 }
 
 table tr:nth-child(odd) td {
-  background-color: #eee;
+  background-color: #333;
 }
 
 table tr:nth-child(even) td {
-  background-color: #ddd;
-}
-
-#mbdm {
-  padding: 30px;
-  background-color: #dcc;
-}
-
-#mbdm h2 {
-  float: left;
-  margin-left: 20px;
-}
-
-#mbdm img {
-  float: left;
-  width: 30%;
-  border-radius: 50%;
+  background-color: #444;
 }
 
 .winner {
@@ -211,6 +241,14 @@ col:nth-of-type(2) {
   width: 65%;
 }
 
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 
 

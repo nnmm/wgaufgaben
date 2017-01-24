@@ -1,16 +1,20 @@
 <template name="App_body">
   <div class="container">
     <header>
-      <a href="/"><h1>WG-Aufgaben</h1></a>
-      <ul id="names">
+      <div id="mbdm" class="clearfix">
+        <a href="/">
+          <img src="/img/profile.jpg" />
+        </a>
+      </div>
+      <div id="roomies">
         {{#each roomie in roomies}}
-          <li class="roomieName {{activeRoomieClass roomie}}">
+          <div class="roomie {{roomie.name}} {{activeRoomieClass roomie}}">
             <a href="/roomie/{{roomie.name}}" title="{{roomie.name}}">
               {{roomie.name}} ({{total roomie.name}})
             </a>
-          </li>
+          </div>
         {{/each}}
-      </ul>
+      </div>
     </header>
 
     <div class="content-overlay"></div>
