@@ -6,53 +6,45 @@ import { task_list } from '../../definitions/tasks.js';
 import './overview-page.html';
 
 Template.Overview_page.helpers({
-  tasks() {
-    return Checkmarks.find({}, { sort: { createdAt: -1 } });
-  },
   overview_table() {
-  	return [
-  		{ name: "a", roomie_scores: [1, 0, 0, 0], },
-  		{ name: "b", roomie_scores: [0, 1, 0, 0], },
-  		{ name: "c", roomie_scores: [0, 0, 1, 0], },
-  		{ name: "d", roomie_scores: [0, 0, 0, 1], },
-  	];
-  	/* The following is hideous and displays wrong numbers if refreshed
-  	 * (but not if returning to the overview page from a roomie page)
-    const allmarks = Checkmarks.find({});
-    let marks = [];
     const roomieIx = {
     	Felix: 0,
     	Veronika: 1,
     	Niko: 2,
     	Stefan: 3,
 	};
-    task_list.forEach(function(cur_task) {
-    	marks.push({
-	    	roomie_scores: [0, 0, 0, 0],
+
+    // build empty rows
+    let rows = [];
+    task_list.forEach(function(cur_task, ix, arr) {
+    	rows.push({
+	    	roomie_scores: [{n: 0}, {n: 0}, {n: 0}, {n: 0}],
 	    	name: cur_task.name,
     	});
     });
-    marks.push({
-    	roomie_scores: [0, 0, 0, 0],
+    /* rows.push({
+    	roomie_scores: [{n: 0}, {n: 0}, {n: 0}, {n: 0}],
     	name: "Eigene",
-	});
-    allmarks.forEach(function(elem) {
-    	let ix = marks.findIndex(function(element, index, arr) {
-    		return element.name === elem.task;
+	}); */
+
+    const marks = Checkmarks.find({}).fetch();
+
+    marks.forEach(function(mark, m_ix, m_arr) {
+    	let ix = rows.findIndex(function(row, r_ix, r_arr) {
+    		return row.name === mark.task;
     	});
-    	// Eigene
-    	if (ix === -1) {
-    		ix = marks.length - 1;
+    	if (ix !== -1) {
+    		const jx = roomieIx[mark.checker];
+    		rows[ix]['roomie_scores'][jx]['n'] += 1;
     	}
-    	const jx = roomieIx[elem.checker];
-    	marks[ix]['roomies'][jx] += 1;
     });
-    let marks = marks.map(function(e, ix, arr) {
-    	return e['roomies'].map(function(count, jx, array) {
-			return "I".repeat(count['count']);
+
+    // lines
+    rows.forEach(function(row, r_ix, r_arr) {
+    	row['roomie_scores'].forEach(function(cell, c_ix, c_arr) {
+    		cell['marks'] = "I".repeat(cell['n']);
     	});
     });
-    console.log(marks);
-    return marks; */
+    return rows;
   },
 });
