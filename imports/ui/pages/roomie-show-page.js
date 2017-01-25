@@ -11,6 +11,18 @@ Template.Roomie_show_page.onCreated(function listsShowPageOnCreated() {
 });
 
 Template.Roomie_show_page.helpers({
+  undoDisabled() {
+    const justadded = Checkmarks.findOne(
+  		{ createdAt: { $gte: new Date(new Date() - 1000*60*3) },
+  		  checker: Template.instance().getRoomieId() },
+  	    { sort: { createdAt: -1 } }
+  	);
+  	if (typeof(justadded) === "undefined") {
+  		return true;
+  	} else {
+  		return false;
+  	}
+  },
   eventlist() {
   	let ts = Checkmarks.find({ checker: FlowRouter.getParam('_id') }, { sort: { createdAt: -1 } }).fetch();
   	const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
@@ -23,23 +35,16 @@ Template.Roomie_show_page.helpers({
 });
 
 Template.Roomie_show_page.events({
-  'click button'(event, instance) {
-  	const bla = Checkmarks.findOne(
+  'click #undo'(event, instance) {
+  	const justadded = Checkmarks.findOne(
   		{ createdAt: { $gte: new Date(new Date() - 1000*60*3) },
   		  checker: instance.getRoomieId() },
   	    { sort: { createdAt: -1 } }
   	);
-  	console.log(bla);
-
-    // increment the counter when button is clicked
-    /*
-    Checkmarks.insert({
-      checker: instance.getRoomieId(),
-      task: this.name,
-      createdAt: new Date(),
-      weight: this.weight,
-    });
-    */
+  	if (typeof(justadded) !== "undefined") {
+  		console.log("Removing", justadded);
+  		Checkmarks.remove(justadded._id);
+  	};
   },
 });
 

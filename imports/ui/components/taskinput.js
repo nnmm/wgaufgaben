@@ -19,6 +19,7 @@ Template.taskinput.helpers({
 
 Template.taskinput.events({
   'click button'(event, instance) {
+    event.preventDefault();
     // increment the counter when button is clicked
     Checkmarks.insert({
       checker: instance.getRoomieId(),

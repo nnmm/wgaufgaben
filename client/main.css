@@ -303,6 +303,10 @@ button:focus {
   outline: 0;
 }
 
+button[disabled=disabled], button:disabled {
+  background-color: #222;
+}
+
 .left-side h2 {
   margin-top: 0;
 }
