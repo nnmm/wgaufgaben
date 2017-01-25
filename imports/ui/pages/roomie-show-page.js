@@ -11,8 +11,13 @@ Template.Roomie_show_page.onCreated(function listsShowPageOnCreated() {
 });
 
 Template.Roomie_show_page.helpers({
-  tasks() {
-    return Checkmarks.find({}, { sort: { createdAt: -1 } });
+  eventlist() {
+  	let ts = Checkmarks.find({ checker: FlowRouter.getParam('_id') }, { sort: { createdAt: -1 } }).fetch();
+  	const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+  	ts.forEach(function(e, ix, arr) {
+  		e.createdAt = new Intl.DateTimeFormat('de-DE', options).format(e.createdAt);
+  	});
+  	return ts;
   },
   taskinputs: task_list,
 });

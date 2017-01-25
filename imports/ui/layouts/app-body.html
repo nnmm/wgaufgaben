@@ -1,12 +1,12 @@
 <template name="App_body">
   <div class="container">
-    <header>
-      <div id="mbdm" class="clearfix">
+    <header class="flex-container">
+      <div id="mbdm" class="left-side">
         <a href="/">
           <img src="/img/profile.jpg" />
         </a>
       </div>
-      <div id="roomies">
+      <div id="roomies" class="right-side flex-container">
         {{#each roomie in roomies}}
           <div class="roomie {{roomie.name}} {{activeRoomieClass roomie}}">
             <a href="/roomie/{{roomie.name}}" title="{{roomie.name}}">

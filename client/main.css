@@ -36,7 +36,7 @@
 
 html {
     font-family: 'dejavu_sansextralight', sans-serif;
-    color: #222;
+    color: white;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -123,7 +123,6 @@ textarea {
 body {
     overflow-y: scroll;
     background-color: #222;
-    /* background-image: url('/img/ricepaper_v3.png'); */
 }
 
 .container {
@@ -131,46 +130,72 @@ body {
   margin: 0 auto;
   min-height: 100%;
   background-color: #333;
-  padding: 20px;
-  color: white;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.flex-container {
+  display: flex;
+}
+
+/* spacing between sections */
+#content-container > .flex-container {
+  padding-bottom: 20px;
+}
+
+.left-side {
+  background-color: #444;
+  box-sizing: border-box;
+  flex: 0 0 35%;
+  padding: 0 20px 0 20px;
+}
+
+.right-side {
+  background-color: #333;
+  box-sizing: border-box;
+  flex: 0 0 65%;
+  padding: 0 20px 0 20px;
+}
 
 /* ==== header ==== */
 
 header {
-  display: flex;
-  margin-bottom: 30px;
+  position: fixed;
+  max-width: 1024px;
+  width: 100%;
 }
 
 #mbdm {
-  /*padding: 30px;*/
-  flex: 1 auto;
-}
-
-#mbdm img {
-  width: 50px;
-  border-radius: 50%;
+  border-bottom: solid white 2px;
 }
 
 #roomies {
-  display: flex;
-  flex: 1 auto;
+  align-items: flex-end;
   font-size: 20px;
+  padding: 0;
 }
 
+#mbdm img {
+  width: 130px;
+  border-radius: 50%;
+}
+
+
+
 .roomie {
-  flex: 1 auto;
   text-align: center;
   padding: 10px 0;
 }
 
-/* make whole block clickable */
 .roomie a {
   display: block;
 }
@@ -180,20 +205,28 @@ header {
 }
 
 .Felix {
-  border-bottom: solid red 2px;
+  border-bottom: solid #18ff00 2px; /* hsv(114, 100, 100) */
+  flex: 0 0 25%;
 }
 
-
 .Veronika {
-  border-bottom: solid #c49 2px;
+  border-bottom: solid #ba00ff 2px; /* hsv(284, 100, 100) */
+  flex: 0 0 25%;
 }
 
 .Niko {
-  border-bottom: solid yellow 2px;
+  border-bottom: solid #ff3600 2px; /* hsv(13, 100, 100) */
+  flex: 0 0 25%;
 }
 
 .Stefan {
-  border-bottom: solid #7bf 2px;
+  border-bottom: solid #005aff 2px; /* hsv(219, 100, 100) */
+  flex: 0 0 25%;
+}
+
+#content-container {
+  padding: 150px 0 0 0;
+  background: linear-gradient(to right, #444 35%, #333 35%);
 }
 
 
@@ -201,14 +234,8 @@ header {
 
 
 
-button {
-  border: none;
-  background-color: #304;
-  display: block;
-}
-
-button:focus {
-  outline: 0;
+#overview_table {
+  padding: 0 20px 30px 20px;
 }
 
 table {
@@ -216,39 +243,70 @@ table {
 }
 
 td {
-  padding: 15px;
-}
-
-table tr:nth-child(odd) td {
-  background-color: #333;
-}
-
-table tr:nth-child(even) td {
-  background-color: #444;
-}
-
-.winner {
-  font-size: 56px;
-  color: #555;
-  display: block;
+  padding: 0px;
 }
 
 col:nth-of-type(1) {
-  width: 35%;
+  width: 37%;
 }
 
 col:nth-of-type(2) {
-  width: 65%;
+  width: 15%;
 }
 
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+col:nth-of-type(3) {
+  width: 18%;
 }
+
+col:nth-of-type(4) {
+  width: 16%;
+}
+
+col:nth-of-type(5) {
+  width: 11%;
+}
+
+table tr:nth-child(odd) td {
+  /*background-color: #333;*/
+}
+
+table tr:nth-child(even) td {
+  /*background-color: #444;*/
+}
+
+
+
+
+
+
+
+
+
+
+#taskselection {
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: flex;
+}
+
+#taskselection button{
+  flex: 1 1 auto;
+}
+
+button {
+  border: none;
+  background-color: #304;
+  /*display: block;*/
+}
+
+button:focus {
+  outline: 0;
+}
+
+.left-side h2 {
+  margin-top: 0;
+}
+
 
 
 
