@@ -1,0 +1,1 @@
+import './banderole-bottom.html';

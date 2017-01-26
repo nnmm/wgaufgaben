@@ -11,6 +11,8 @@ import { $ } from 'meteor/jquery';
 import { Checkmarks } from '../../api/checkmarks.js';
 
 import './app-body.html';
+import '../components/banderole-top.js';
+import '../components/banderole-bottom.js';
 
 
 Template.App_body.helpers({
