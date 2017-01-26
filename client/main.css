@@ -267,7 +267,7 @@ td {
 }
 
 tr {
-  border-bottom: dashed rgba(255, 255, 255, 0.3) 1px;
+  border-bottom: solid rgba(255, 255, 255, 0.3) 1px;
 }
 
 col:nth-of-type(1) {
