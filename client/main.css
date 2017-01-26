@@ -159,6 +159,10 @@ ul {
   padding: 0 20px 0 20px;
 }
 
+.left-side h2 {
+  margin-top: 0;
+}
+
 .right-side {
   background-color: #333;
   box-sizing: border-box;
@@ -178,19 +182,33 @@ header {
   border-bottom: solid white 2px;
 }
 
-#roomies {
-  align-items: flex-end;
-  font-size: 20px;
-  padding: 0;
-}
-
 #mbdm img {
   width: 120px;
   border-radius: 50%;
   padding: 10px;
 }
 
+svg {
+  width: 150px;
+  position: absolute;
+}
 
+#banderole-top {
+  left: 15px;
+  top: -15px;
+}
+
+#banderole-bottom {
+  left: 15px;
+  top: 80px;
+}
+
+
+#roomies {
+  align-items: flex-end;
+  font-size: 20px;
+  padding: 0;
+}
 
 .roomie {
   text-align: center;
@@ -205,22 +223,22 @@ header {
   background-color: #555;
 }
 
-.Felix {
+header .Felix {
   border-bottom: solid #18ff00 2px; /* hsv(114, 100, 100) */
   flex: 0 0 25%;
 }
 
-.Veronika {
+header .Veronika {
   border-bottom: solid #ba00ff 2px; /* hsv(284, 100, 100) */
   flex: 0 0 25%;
 }
 
-.Niko {
+header .Niko {
   border-bottom: solid #ff3600 2px; /* hsv(13, 100, 100) */
   flex: 0 0 25%;
 }
 
-.Stefan {
+header .Stefan {
   border-bottom: solid #005aff 2px; /* hsv(219, 100, 100) */
   flex: 0 0 25%;
 }
@@ -282,23 +300,11 @@ table tr:nth-child(even) td {
 
 
 
-svg {
-  width: 150px;
-  position: absolute;
-}
 
-#banderole-top {
-  left: 15px;
-  top: -15px;
-}
-#banderole-bottom {
-  left: 15px;
-  top: 80px;
-}
 
 #taskselection {
   flex-wrap: wrap;
-  flex-direction: column;
+  align-content: space-between;
   display: flex;
 }
 
@@ -310,7 +316,6 @@ svg {
 
 button {
   border: none;
-  background-color: #304;
   padding: 5px;
   /*display: block;*/
 }
@@ -319,12 +324,26 @@ button:focus {
   outline: 0;
 }
 
-button[disabled=disabled], button:disabled {
-  background-color: #222;
+
+
+.Felix button {
+  background-color: hsl(114, 100%, 20%);
 }
 
-.left-side h2 {
-  margin-top: 0;
+.Veronika button {
+  background-color: hsl(284, 100%, 20%);
+}
+
+.Niko button {
+  background-color: hsl(13, 100%, 25%);
+}
+
+.Stefan button {
+  background-color: hsl(219, 100%, 20%);
+}
+
+button[disabled=disabled], button:disabled {
+  background-color: #222;
 }
 
 

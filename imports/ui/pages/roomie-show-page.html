@@ -1,6 +1,6 @@
 <template name="Roomie_show_page">
   <!-- task input -->
-  <div class="flex-container">
+  <div class="flex-container {{roomie}}">
     <div class="left-side">
       <h2>Neue Aufgabe eintragen:</h2>
       <button id="undo" disabled="{{undoDisabled}}">
@@ -9,7 +9,7 @@
     </div>
 
     <div class="right-side">
-      <div id="taskselection">
+      <div id="taskselection" class="flex-container">
         {{#each taskinputs}}
           {{> taskinput}}
         {{/each}}

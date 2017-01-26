@@ -11,6 +11,9 @@ Template.Roomie_show_page.onCreated(function listsShowPageOnCreated() {
 });
 
 Template.Roomie_show_page.helpers({
+  roomie() {
+  	return Template.instance().getRoomieId();
+  },
   undoDisabled() {
     const justadded = Checkmarks.findOne(
   		{ createdAt: { $gte: new Date(new Date() - 1000*60*3) },
@@ -25,9 +28,10 @@ Template.Roomie_show_page.helpers({
   },
   eventlist() {
   	let ts = Checkmarks.find({ checker: FlowRouter.getParam('_id') }, { sort: { createdAt: -1 } }).fetch();
-  	const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+  	const days = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
   	ts.forEach(function(e, ix, arr) {
-  		e.createdAt = new Intl.DateTimeFormat('de-DE', options).format(e.createdAt);
+  		const d = e.createdAt;
+  		e.createdAt = days[d.getDay()] + ', ' + d.getDate() + '.' + (d.getMonth()+1) + ' um ' + d.getHours() + ':' + d.getMinutes();
   	});
   	return ts;
   },
