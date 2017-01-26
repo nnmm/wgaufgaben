@@ -11,5 +11,6 @@ export const task_list = [
   { name: "Pfandflaschen zurückgeben", weight: 4 },
   { name: "Wasserkocher entkalken", weight: 2 },
   { name: "Duschabfluss reinigen", weight: 3 },
+  { name: "Wohnung lüften", weight: 1 },
   { name: "Persönlicher Putzdienst", weight: 0 },
 ];
