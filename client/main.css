@@ -244,7 +244,7 @@ header .Stefan {
 }
 
 #content-container {
-  padding: 150px 0 0 0;
+  padding: 160px 0 0 0;
   background: linear-gradient(to right, #444 35%, #333 35%);
 }
 
@@ -259,10 +259,15 @@ header .Stefan {
 
 table {
   width: 100%;
+  font-size: 20px;
 }
 
 td {
-  padding: 0px;
+  padding: 3px 0;
+}
+
+tr {
+  border-bottom: dashed rgba(255, 255, 255, 0.3) 1px;
 }
 
 col:nth-of-type(1) {
@@ -324,25 +329,51 @@ button:focus {
   outline: 0;
 }
 
-
+#undo {
+  padding: 15px;
+}
 
 .Felix button {
   background-color: hsl(114, 100%, 20%);
+}
+
+.Felix button:active {
+  background-color: hsl(114, 100%, 50%);
 }
 
 .Veronika button {
   background-color: hsl(284, 100%, 20%);
 }
 
+.Veronika button:active {
+  background-color: hsl(284, 100%, 50%);
+}
+
 .Niko button {
   background-color: hsl(13, 100%, 25%);
+}
+
+.Niko button:active {
+  background-color: hsl(13, 100%, 50%);
 }
 
 .Stefan button {
   background-color: hsl(219, 100%, 20%);
 }
 
-button[disabled=disabled], button:disabled {
+.Stefan button:active {
+  background-color: hsl(219, 100%, 50%);
+}
+
+
+
+
+
+
+
+
+button[disabled=disabled], button[disabled=disabled]:active,
+button:disabled, button:disabled:active {
   background-color: #222;
 }
 
