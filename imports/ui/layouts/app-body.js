@@ -46,7 +46,6 @@ Template.App_body.helpers({
         task: "Wohnung lüften" },
         { sort: { createdAt: -1 } }
     );
-    console.log(aired);
     if (typeof(aired) === "undefined") {
       return true;
     } else {

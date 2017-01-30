@@ -15,6 +15,9 @@ Template.taskinput.helpers({
     const taskCount = Checkmarks.find({checker: roomieId, task: this.name}).count();
     return "I".repeat(taskCount);
   },
+  isStandard(type) {
+    return type === "standard";
+  },
 });
 
 Template.taskinput.events({

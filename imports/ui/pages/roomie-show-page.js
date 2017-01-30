@@ -50,5 +50,29 @@ Template.Roomie_show_page.events({
   		Checkmarks.remove(justadded._id);
   	};
   },
-});
+  'submit .custom-task'(event, instance) {
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const cust_task = target.task.value;
+    const cust_weight = target.weight.value;
 
+    if (!cust_weight || !cust_task || !/^(\-|\+)?([0-9]+|Infinity)$/.test(cust_weight)) {
+      console.log("Invalid custom task input");
+      return;
+    }
+    // Insert a task into the collection
+    Checkmarks.insert({
+      checker: instance.getRoomieId(),
+      task: cust_task,
+      createdAt: new Date(),
+      weight: Number(cust_weight),
+    });
+  
+    // Clear form
+    target.task.value = '';
+    target.weight.value = '';
+  },
+});

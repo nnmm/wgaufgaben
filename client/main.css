@@ -170,7 +170,18 @@ ul {
   padding: 0 20px 0 20px;
 }
 
-/* ==== header ==== */
+button, input, label {
+  border: none;
+  padding: 5px;
+}
+
+button:focus, input:focus {
+  outline: 0;
+}
+
+/* ============================================================ *
+ * ////////////////////////// HEADER ////////////////////////// *
+ * ============================================================ */
 
 header {
   position: fixed;
@@ -256,7 +267,9 @@ header .Stefan {
 
 
 
-
+/* ============================================================ *
+ * //////////////////////// MAIN PAGE ///////////////////////// *
+ * ============================================================ */
 
 #overview_table {
   padding: 0 20px 30px 20px;
@@ -310,7 +323,13 @@ table tr:nth-child(even) td {
 
 
 
+/* ============================================================ *
+ * //////////////////////// ROOMIE PAGE /////////////////////// *
+ * ============================================================ */
 
+#undo {
+  padding: 15px;
+}
 
 #taskselection {
   flex-wrap: wrap;
@@ -324,18 +343,15 @@ table tr:nth-child(even) td {
   font-size: 20px;
 }
 
-button {
-  border: none;
-  padding: 5px;
-  /*display: block;*/
+form {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-button:focus {
-  outline: 0;
-}
-
-#undo {
-  padding: 15px;
+input {
+  width: 100%;
+  background-color: transparent;
 }
 
 .Felix button {
@@ -369,11 +385,6 @@ button:focus {
 .Stefan button:active {
   background-color: hsl(219, 100%, 50%);
 }
-
-
-
-
-
 
 
 

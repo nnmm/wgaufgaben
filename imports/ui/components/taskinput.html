@@ -1,6 +1,8 @@
 <template name="taskinput">
-  <button>
-    ({{weight}}) {{name}}
-    <div>&nbsp;{{marks}}</div>
-  </button>
+  {{#if (isStandard type)}}
+    <button>
+      ({{weight}}) {{name}}
+      <div>&nbsp;{{marks}}</div>
+    </button>
+  {{/if}}
 </template>
