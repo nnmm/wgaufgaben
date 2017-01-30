@@ -13,5 +13,10 @@ export const task_list = [
   { name: "Wasserkocher entkalken", type: "standard", weight: 2 },
   { name: "Duschabfluss reinigen", type: "standard", weight: 3 },
   { name: "Wohnung lüften", type: "standard", weight: 1 },
-  { name: "Eigene", type: "custom" },
 ];
+
+export function taskIndex(name) {
+  return task_list.findIndex(function(tsk, t_ix, t_arr) {
+    return tsk.name === name;
+  });
+}

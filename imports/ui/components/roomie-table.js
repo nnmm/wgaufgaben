@@ -1,0 +1,1 @@
+import './roomie-table.html';

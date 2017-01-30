@@ -1,27 +1,4 @@
 <template name="Overview_page">
-  <div id="overview_table">
-    <table>
-      <colgroup>
-        <col span="1">
-        <col span="1">
-        <col span="1">
-        <col span="1">
-        <col span="1">
-      </colgroup>
-      <tbody>
-        {{#each row in overview_table}}
-          <tr>
-            <td>
-              {{row.name}}
-            </td>
-            {{#each score in row.roomie_scores}}
-              <td>
-                {{score.marks}}
-              </td>
-            {{/each}}
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
+  {{> Roomie_table table=tables.standard}}
+  {{> Roomie_table table=tables.custom}}
 </template>

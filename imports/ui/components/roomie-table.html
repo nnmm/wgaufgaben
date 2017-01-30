@@ -1,0 +1,27 @@
+<template name="Roomie_table">
+  <div class="roomie-table">
+    <table>
+      <colgroup>
+        <col span="1">
+        <col span="1">
+        <col span="1">
+        <col span="1">
+        <col span="1">
+      </colgroup>
+      <tbody>
+        {{#each row in table}}
+          <tr>
+            <td>
+              {{row.name}}
+            </td>
+            {{#each score in row.roomie_scores}}
+              <td>
+                {{score.entry}}
+              </td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
