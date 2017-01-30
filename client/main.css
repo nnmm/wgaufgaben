@@ -180,6 +180,11 @@ header {
 
 #mbdm {
   border-bottom: solid white 2px;
+  justify-content: space-between;
+}
+
+#mbdm i {
+  padding-top: 20px;
 }
 
 #mbdm img {

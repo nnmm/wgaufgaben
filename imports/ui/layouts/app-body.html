@@ -1,12 +1,18 @@
 <template name="App_body">
   <div class="container">
     <header class="flex-container">
-      <div id="mbdm" class="left-side">
+      <div id="mbdm" class="left-side flex-container">
         <a href="/">
           {{> banderole_top}}
           {{> banderole_bottom}}
           <img src="/img/placeholder.jpg" />
         </a>
+        {{#if needAiring}}
+          <i class="fa fa-home" aria-hidden="true"></i>
+        {{/if}}
+        {{#if disconnected}}
+          <i class="fa fa-plug" aria-hidden="true"></i>
+        {{/if}}
       </div>
       <div id="roomies" class="right-side flex-container">
         {{#each roomie in roomies}}

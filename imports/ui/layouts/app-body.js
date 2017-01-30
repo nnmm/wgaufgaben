@@ -16,6 +16,9 @@ import '../components/banderole-bottom.js';
 
 
 Template.App_body.helpers({
+  disconnected() {
+    return Meteor.status().status !== "connected";
+  },
   roomies: [
     { name: "Felix" },
     { name: "Veronika" },
@@ -34,6 +37,21 @@ Template.App_body.helpers({
       total += check.weight || 1;
     });
     return total;
+  },
+  needAiring() {
+    let today = new Date();
+    today.setHours(17, 0, 0, 0);
+    const aired = Checkmarks.findOne(
+      { createdAt: { $gte: today },
+        task: "Wohnung lüften" },
+        { sort: { createdAt: -1 } }
+    );
+    console.log(aired);
+    if (typeof(aired) === "undefined") {
+      return true;
+    } else {
+      return false;
+    }
   },
 });
 
