@@ -1,4 +1,5 @@
 export const task_list = [
+  { name: "Persönlicher Putzdienst", weight: 0 },
   { name: "Biomüll", weight: 1 },
   { name: "Restmüll", weight: 2 },
   { name: "WG-Wäsche waschen", weight: 4 },
@@ -12,5 +13,4 @@ export const task_list = [
   { name: "Wasserkocher entkalken", weight: 2 },
   { name: "Duschabfluss reinigen", weight: 3 },
   { name: "Wohnung lüften", weight: 1 },
-  { name: "Persönlicher Putzdienst", weight: 0 },
 ];
