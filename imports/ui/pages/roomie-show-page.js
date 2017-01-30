@@ -31,7 +31,7 @@ Template.Roomie_show_page.helpers({
   	const days = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
   	ts.forEach(function(e, ix, arr) {
   		const d = e.createdAt;
-  		e.createdAt = days[d.getDay()] + ', ' + d.getDate() + '.' + (d.getMonth()+1) + ' um ' + d.getHours() + ':' + d.getMinutes();
+  		e.createdAt = days[d.getDay()-1] + ', ' + d.getDate() + '.' + (d.getMonth()+1) + ' um ' + d.getHours() + ':' + d.getMinutes();
   	});
   	return ts;
   },
