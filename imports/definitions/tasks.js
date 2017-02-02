@@ -15,8 +15,10 @@ export const task_list = [
   { name: "Wohnung lüften", type: "standard", weight: 1 },
 ];
 
-export function taskIndex(name) {
-  return task_list.findIndex(function(tsk, t_ix, t_arr) {
-    return tsk.name === name;
+export const taskIndex = function() {
+  let ti = {};
+  task_list.forEach(function(tsk, ix, arr) {
+    ti[tsk.name] = ix;
   });
-}
+  return ti;
+}();

@@ -28,8 +28,8 @@ Template.Overview_page.helpers({
 
     marks.forEach(function(mark, m_ix, m_arr) {
       const jx = roomieIx[mark.checker];
-      const ix = taskIndex(mark.task);
-      if (ix !== -1) {
+      const ix = taskIndex[mark.task];
+      if (typeof(ix) !== 'undefined') {
         standard[ix]['roomie_scores'][jx]['n'] += 1;
       } else {
         const jx = roomieIx[mark.checker];
