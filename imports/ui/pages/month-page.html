@@ -1,0 +1,21 @@
+<template name="Month_page">
+  {{> Roomie_table table=tables.standard}}
+  {{> Roomie_table table=tables.custom}}
+  <div class="flex-container">
+    <div class="left-side">
+      <div class="flex-container datepicker">
+      	<a href="{{prevMonthURL}}">
+      	  <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+      	</a>
+ 		<h2>{{month}} {{year}}</h2>
+      	<a href="{{nextMonthURL}}">
+ 		  <i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i>
+ 		</a>
+      </div>
+    </div>
+
+    <div class="right-side">
+      &nbsp;
+    </div>
+  </div>
+</template>

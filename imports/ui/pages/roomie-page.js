@@ -3,14 +3,14 @@ import { Template } from 'meteor/templating';
 import { Checkmarks } from '../../api/checkmarks.js';
 import { task_list } from '../../definitions/tasks.js';
 
-import './roomie-show-page.html';
+import './roomie-page.html';
 import '../components/taskinput.js';
 
-Template.Roomie_show_page.onCreated(function listsShowPageOnCreated() {
+Template.Roomie_page.onCreated(function listsShowPageOnCreated() {
   this.getRoomieId = () => FlowRouter.getParam('_id');
 });
 
-Template.Roomie_show_page.helpers({
+Template.Roomie_page.helpers({
   roomie() {
   	return Template.instance().getRoomieId();
   },
@@ -38,7 +38,7 @@ Template.Roomie_show_page.helpers({
   taskinputs: task_list,
 });
 
-Template.Roomie_show_page.events({
+Template.Roomie_page.events({
   'click #undo'(event, instance) {
   	const justadded = Checkmarks.findOne(
   		{ createdAt: { $gte: new Date(new Date() - 1000*60*3) },
