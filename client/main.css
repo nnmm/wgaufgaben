@@ -187,6 +187,7 @@ header {
   position: fixed;
   max-width: 1024px;
   width: 100%;
+  z-index: 2;
 }
 
 #mbdm {
@@ -273,7 +274,6 @@ header .Stefan {
 
 .datepicker {
   justify-content: space-between;
-  align-items: baseline;
 }
 
 .datepicker h2 {
