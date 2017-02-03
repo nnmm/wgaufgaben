@@ -1,6 +1,4 @@
 <template name="Month_page">
-  {{> Roomie_table table=tables.standard}}
-  {{> Roomie_table table=tables.custom}}
   <div class="flex-container">
     <div class="left-side">
       <div class="flex-container datepicker">
@@ -18,4 +16,9 @@
       &nbsp;
     </div>
   </div>
+
+  {{> Roomie_table table=tables.standard}}
+
+  {{> Roomie_table table=tables.custom}}
+  
 </template>

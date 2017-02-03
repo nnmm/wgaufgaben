@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
  
+import { findInMonth } from '../../api/methods.js';
 import { Checkmarks } from '../../api/checkmarks.js';
 import { task_list } from '../../definitions/tasks.js';
 
@@ -27,7 +28,7 @@ Template.Roomie_page.helpers({
   	}
   },
   eventlist() {
-  	let ts = Checkmarks.find({ checker: FlowRouter.getParam('_id') }, { sort: { createdAt: -1 } }).fetch();
+  	let ts = findInMonth(FlowRouter.getParam('_id'));
   	const days = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
   	ts.forEach(function(e, ix, arr) {
   		const d = e.createdAt;
