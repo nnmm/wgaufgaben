@@ -3,23 +3,19 @@ import { ActiveRoute } from 'meteor/zimme:active-route';
 
 import { Checkmarks } from './checkmarks.js';
 
-export const findInMonth = function(roomie = undefined) {
+export const findInMonth = function(roomie=undefined, task=undefined) {
   const year = getYear();
   const month = getMonth();
   const start = new Date(year, month-1);
   const end = new Date(year, month);
-  if (typeof(roomie) === 'undefined') {
-  	return Checkmarks.find(
-      { createdAt: { $gte: start, $lt: end } },
-      { sort: { createdAt: -1 } }
-    );
-  } else {
-  	return Checkmarks.find(
-  	  { checker: roomie,
-  	  	createdAt: { $gte: start, $lt: end } },
-  	  { sort: { createdAt: -1 } }
-  	);
+  let query = { createdAt: { $gte: start, $lt: end } };
+  if (typeof(roomie) !== 'undefined') {
+    query['checker'] = roomie;
   }
+  if (typeof(task) !== 'undefined') {
+    query['task'] = task;
+  }
+  return Checkmarks.find(query, { sort: { createdAt: -1 } });
 }
 
 export const getMonth = function() {

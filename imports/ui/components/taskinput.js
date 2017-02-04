@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
  
 import { Checkmarks } from '../../api/checkmarks.js';
 import { task_list } from '../../definitions/tasks.js';
-
+import { findInMonth } from '../../api/methods.js';
 import './taskinput.html';
 
 Template.taskinput.onCreated(function() {
@@ -12,7 +12,7 @@ Template.taskinput.onCreated(function() {
 Template.taskinput.helpers({
   marks() {
     const roomieId = Template.instance().getRoomieId();
-    const taskCount = Checkmarks.find({checker: roomieId, task: this.name}).count();
+    const taskCount = findInMonth(roomieId, this.name).count();
     return "I".repeat(taskCount);
   },
   isStandard(type) {
