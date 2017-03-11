@@ -38,7 +38,11 @@ Template.App_body.helpers({
     const taskCount = findInMonth(roomie);
     let total = 0;
     taskCount.forEach(function(check) {
-      total += check.weight || 1;
+      if (typeof(check.weight) === "undefined") {
+        total += 1;
+      } else {
+        total += check.weight;
+      }
     });
     return total;
   },
